@@ -169,7 +169,7 @@ def stdLocal (image, roi, scale):
 #by Gennadii Donchyts see https://groups.google.com/forum/#!topic/google-earth-engine-developers/a9W0Nlrhoq0
 #I(n+1, i, j) = I(n, i, j) + lambda * (cN * dN(I) + cS * dS(I) + cE * dE(I), cW * dW(I))
 #iter: Number of interations to apply filter
-#K: kernal size
+#K: kernel size
 #method: choose method 1 (default) or 2
 # Returns: image 
 #
