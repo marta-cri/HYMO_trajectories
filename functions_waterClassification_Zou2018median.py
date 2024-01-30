@@ -1,7 +1,5 @@
-import ee
-
 def Ndvi(image):
-    # // calculate ndvi
+    # calculate ndvi
     ndvi = image.normalizedDifference(['Nir_median', 'Red_median']).rename('ndvi')
     return ndvi
 

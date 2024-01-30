@@ -2,8 +2,6 @@
   # /* water test functions for determing DSWE
 # see https://github.com/USGS-EROS/espa-surface-water-extent/blob/master/dswe/algorithm-description.md
 # */
-import ee
-
 def Mndwi(image):
     return(image.normalizedDifference(['Green_median', 'Swir1_median']).rename('mndwi'))
 
