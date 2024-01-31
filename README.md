@@ -5,10 +5,23 @@ For the automatic download you need to activate also the Drive API.
 To authenticate the credentials are specified in the second code cell of the notebook, read below for a better understanding of the authentication process.
 
 ### Authentication process
-To authenticate both Earth Engine and Drive you need to specify the name of the service account (the mail associated with it) in the <service_account> variable, the name of the json file where the credentials are stored in the <credentials_file> variable and the path of the folder where the file is stored in the <credentials_folder>. The author used a file that is placed in the same directory as the other scripts, but is not tracked on git to keep the credentials safe. In this file there is a function called <get_credentials> that takes no input and returns the value of this three variables.
+To authenticate both Earth Engine and Drive you need to specify the name of the service account (the mail associated with it) in the ```service_account``` variable, the name of the json file where the credentials are stored in the ```credentials_file``` variable and the path of the folder where the file is stored in the ```credentials_folder```. The author used a file called ```credential_script.py``` that is placed in the same directory as the other scripts, but is not tracked on git to keep the credentials safe. In this file there is a function called ```get_credentials``` that takes no input and returns the value of this three variables. Below you will find an example of the structure.
+
+```python
+'''
+script to get credentials for GEE and Google Drive
+'''
+
+def get_credentials():
+    # credentials
+    service_account    = 'service-account-email@project-domain.com' # service account name
+    credentials_folder = '<path\\to\\folder\\with\\credentials\\file\\>' # folder where the credentials are stored
+    credentials_file   = '<credential_file_name>.json' # credentials file name
+    return service_account, credentials_folder, credentials_file
+```
 
 ### input data import
-To avoid modifying the main code every time the input data was moved to an external function that is not tracked in git, like the credentia function. The file need to be named <input_data.py> and contain a function ```get_input_data()``` which will return data needed, below you will find an example:
+To avoid modifying the main code every time the input data was moved to an external function that is not tracked in git, like the credentia function. The file need to be named ```input_data.py``` and contain a function ```get_input_data``` which will return data needed, below you will find an example of the structure.
 
 ```python
 def get_input_data():
