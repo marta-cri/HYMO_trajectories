@@ -203,3 +203,14 @@ def peronaMalikFilter(I, iter, K, method, l):
         I = I.add(ee.Image(Lambda).multiply(cN.multiply(dI_N).add(cS.multiply(dI_S)).add(cE.multiply(dI_E)).add(cW.multiply(dI_W))))
     
     return I
+
+def check_tasks_status(tasks_list):
+    export_task  = [dict for dict in tasks_list  if dict['metadata']['type' ] == 'EXPORT_IMAGE']
+    running_task = [dict for dict in export_task if dict['metadata']['state'] == 'RUNNING'     ]
+    ready_task   = [dict for dict in export_task if dict['metadata']['state'] == 'READY'       ]
+    unsub_task   = [dict for dict in export_task if dict['metadata']['state'] == 'UNSUBMITTED' ]
+
+    run     = len(running_task)
+    not_run = len(ready_task) + len(unsub_task)
+    
+    return run, not_run
