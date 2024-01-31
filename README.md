@@ -34,17 +34,17 @@ def get_input_data():
     source        = 'ls'  # specify the satellite data: 'ls' for Landsat or 's2' for Sentinel-2
     
     river_name    = 'Kuk' # river name
-    coordinates = [[[-159.2000, 70.0365],
-                    [-159.0765, 70.2179],
-                    [-159.6402, 70.1556],
-                    [-159.7777, 70.0919],
-                    [-159.2000, 70.0365]]] # coordinates of the area to investigate
-    EPSG_code = 'EPSG:32604' # EPSG code for the projection of the results
+    coordinates   = [[[-159.2000, 70.0365],
+                      [-159.0765, 70.2179],
+                      [-159.6402, 70.1556],
+                      [-159.7777, 70.0919],
+                      [-159.2000, 70.0365]]] # coordinates of the area to investigate
+    EPSG_code     = 'EPSG:32604' # EPSG code for the projection of the results
 
-    dates = [1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993,
-             1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003,
-             2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013,
-             2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023] # years to be analysed
+    dates         = [1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993,
+                     1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003,
+                     2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013,
+                     2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023] # years to be analysed
 
     output_folder = '<path/to/output/folder>'
     
