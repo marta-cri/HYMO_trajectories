@@ -26,19 +26,19 @@ To avoid modifying the main code every time the input data was moved to an exter
 ```python
 def get_input_data():
     # specify the input data
-    river_name    = 'Kuk' # river name
-    source        = 'ls'  # specify the satellite data: 'ls' for Landsat or 's2' for Sentinel-2
     scaledLS      = True  # specify if you want to analyse also the sentinel-2 data with a PM filter with a kernel equal to the Landsat one
     print_errors  = True  # specify if you want to print the errors during the mask extraction
     delete_other  = False # specify if you want to delete other folders in google drive
     download_wait = 30    # specify the time to wait for checks if task are running
 
+    source        = 'ls'  # specify the satellite data: 'ls' for Landsat or 's2' for Sentinel-2
+    
+    river_name    = 'Kuk' # river name
     coordinates = [[[-159.2000, 70.0365],
                     [-159.0765, 70.2179],
                     [-159.6402, 70.1556],
                     [-159.7777, 70.0919],
                     [-159.2000, 70.0365]]] # coordinates of the area to investigate
-
     EPSG_code = 'EPSG:32604' # EPSG code for the projection of the results
 
     dates = [1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993,
