@@ -161,19 +161,20 @@ def stdLocal (image, roi, scale):
     })
     return std_value
 
-#PERONA MALIK FILTER
-# Perona malik filter
-# I(n+1, i, j) = I(n, i, j) + Lambda * (cN * dN(I) + cS * dS(I) + cE * dE(I), cW * dW(I))
-#**
-#Perona-Malik (anisotropic diffusion) convolution
-#by Gennadii Donchyts see https://groups.google.com/forum/#!topic/google-earth-engine-developers/a9W0Nlrhoq0
-#I(n+1, i, j) = I(n, i, j) + lambda * (cN * dN(I) + cS * dS(I) + cE * dE(I), cW * dW(I))
-#iter: Number of interations to apply filter
-#K: kernel size
-#method: choose method 1 (default) or 2
-# Returns: image 
-#
 def peronaMalikFilter(I, iter, K, method, l):
+    '''
+    PERONA MALIK FILTER
+    Perona malik filter
+    I(n+1, i, j) = I(n, i, j) + Lambda * (cN * dN(I) + cS * dS(I) + cE * dE(I), cW * dW(I))
+    
+    Perona-Malik (anisotropic diffusion) convolution
+    by Gennadii Donchyts see https://groups.google.com/forum/#!topic/google-earth-engine-developers/a9W0Nlrhoq0
+    I(n+1, i, j) = I(n, i, j) + lambda * (cN * dN(I) + cS * dS(I) + cE * dE(I), cW * dW(I))
+    iter: Number of interations to apply filter
+    K: kernel size
+    method: choose method 1 (default) or 2
+    Returns: image 
+    '''
     dxW = ee.Kernel.fixed(3, 3, [[ 0,  0,  0], [ 1, -1,  0], [ 0,  0,  0]])
     dxE = ee.Kernel.fixed(3, 3, [[ 0,  0,  0], [ 0, -1,  1], [ 0,  0,  0]])
     dyN = ee.Kernel.fixed(3, 3, [[ 0,  1,  0], [ 0, -1,  0], [ 0,  0,  0]])
