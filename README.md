@@ -27,6 +27,7 @@ To avoid modifying the main code every time the input data was moved to an exter
 def get_input_data():
     # specify the input data
     scaledLS      = True  # specify if you want to analyse also the sentinel-2 data with a PM filter with a kernel equal to the Landsat one
+    save_area     = False # specify if you want to calculate the area of the river mask and save it in a dataframe
     print_errors  = True  # specify if you want to print the errors during the mask extraction
     delete_other  = False # specify if you want to delete other folders in google drive
     download_wait = 30    # specify the time to wait for checks if task are running
@@ -50,4 +51,5 @@ def get_input_data():
 
     output_folder = '<path/to/output/folder>'
     
-    return scaledLS, print_errors, delete_other, download_wait, source, river_name, coordinates, EPSG_code, dates, period, output_folder
+    return scaledLS, save_area, print_errors, delete_other, download_wait, source, river_name, coordinates, EPSG_code, dates, period, output_folder
+```
