@@ -207,11 +207,13 @@ def peronaMalikFilter(I, iter, K, method, l):
 
 def check_tasks_status(tasks_list):
     export_task  = [dict for dict in tasks_list  if dict['metadata']['type' ] == 'EXPORT_IMAGE']
+    compl_task   = [dict for dict in export_task if dict['metadata']['state'] == 'COMPLETED'   ]
     running_task = [dict for dict in export_task if dict['metadata']['state'] == 'RUNNING'     ]
     ready_task   = [dict for dict in export_task if dict['metadata']['state'] == 'READY'       ]
     unsub_task   = [dict for dict in export_task if dict['metadata']['state'] == 'UNSUBMITTED' ]
 
+    compl   = len(compl_task)
     run     = len(running_task)
     not_run = len(ready_task) + len(unsub_task)
     
-    return run, not_run
+    return compl, run, not_run
