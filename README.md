@@ -31,6 +31,7 @@ def get_input_data():
     print_errors  = True  # specify if you want to print the errors during the mask extraction
     delete_other  = False # specify if you want to delete other folders in google drive
     download_wait = 30    # specify the time to wait for checks if task are running
+    maxPixels     = 1e13  # specify the maximum number of pixels for the export
 
     source        = 'ls'  # specify the satellite data: 'ls' for Landsat or 's2' for Sentinel-2
     
@@ -51,5 +52,5 @@ def get_input_data():
 
     output_folder = '<path/to/output/folder>'
     
-    return scaledLS, save_area, print_errors, delete_other, download_wait, source, river_name, coordinates, EPSG_code, dates, period, output_folder
+    return scaledLS, save_area, print_errors, delete_other, download_wait, maxPixels, source, river_name, coordinates, EPSG_code, dates, period, output_folder
 ```
